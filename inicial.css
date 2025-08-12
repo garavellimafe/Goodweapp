@@ -1,15 +1,74 @@
-/* inicial.css */
-body{
-    produtos{
-        font-family: 'BankGothic Md BT', sans-serif;
-    }
-    usuario{
-        font-family: 'BankGothic Md BT', sans-serif;
-    }
-    aparelho{
-        font-family: 'BankGothic Md BT', sans-serif;
-    }
-    prioridade_energia{
-        font-family: 'BankGothic Md BT', sans-serif;
-    }
+body {
+    font-family: 'BankGothic Md BT', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout horizontal */
+.menu-lateral {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: nowrap; /* impede quebra de linha */
+}
+
+/* Logo */
+.logo img.logo_goodwe {
+    width: 150px;
+    height: auto;
+}
+
+/* Oculta os itens inicialmente */
+.produtos-itens,
+.suporte,
+.aparelhos-itens,
+.prioridade_energia-itens,
+.usuario_itens {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+/* Exibe os itens ao passar o mouse sobre o contêiner */
+.produtos:hover .produtos-itens,
+.produtos:hover .suporte,
+.aparelhos:hover .aparelhos-itens,
+.prioridade_energia:hover .prioridade_energia-itens,
+.usuario:hover .usuario_itens {
+    display: flex;
+}
+
+/* Estilo dos itens */
+.produto_item,
+.suporte_item,
+.aparelhos_item,
+.prioridade_energia_item,
+.usuario_item {
+    background-color: #f0f0f0;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.produto_item:hover,
+.suporte_item:hover,
+.aparelhos_item:hover,
+.prioridade_energia_item:hover,
+.usuario_item:hover {
+    background-color: #e0e0e0;
+}
+
+/* Estilo dos blocos */
+.logo,
+.produtos,
+.usuario,
+.aparelhos,
+.prioridade_energia {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 6px;
+    min-width: 180px;
 }
