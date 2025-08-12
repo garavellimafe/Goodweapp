@@ -1,17 +1,30 @@
+/* Fonte e cor padrão para todo o texto */
 body {
-    font-family: 'BankGothic Md BT', sans-serif;
+    font-family: "Nunito", sans-serif;
     margin: 0;
     padding: 0;
+    color: #666;
 }
 
 /* Layout horizontal */
 .menu-lateral {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     gap: 20px;
     padding: 20px;
-    flex-wrap: nowrap; /* impede quebra de linha */
+}
+
+/* Estilo global dos links */
+a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover,
+a:active {
+    color: red;
+    text-decoration: none;
 }
 
 /* Logo */
@@ -32,12 +45,12 @@ body {
     margin-top: 10px;
 }
 
-/* Exibe os itens ao passar o mouse sobre o contêiner */
-.produtos:hover .produtos-itens,
-.produtos:hover .suporte,
-.aparelhos:hover .aparelhos-itens,
-.prioridade_energia:hover .prioridade_energia-itens,
-.usuario:hover .usuario_itens {
+/* Exibe os itens ao passar o mouse sobre o bloco inteiro */
+.menu-bloco:hover .produtos-itens,
+.menu-bloco:hover .suporte,
+.menu-bloco:hover .aparelhos-itens,
+.menu-bloco:hover .prioridade_energia-itens,
+.menu-bloco:hover .usuario_itens {
     display: flex;
 }
 
@@ -51,6 +64,7 @@ body {
     padding: 8px;
     border-radius: 4px;
     transition: background-color 0.3s;
+    color: #666;
 }
 
 .produto_item:hover,
@@ -62,13 +76,12 @@ body {
 }
 
 /* Estilo dos blocos */
-.logo,
-.produtos,
-.usuario,
-.aparelhos,
-.prioridade_energia {
+.menu-bloco {
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 6px;
     min-width: 180px;
+    color: #666;
+    display: flex;
+    flex-direction: column;
 }
