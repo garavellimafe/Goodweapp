@@ -12,6 +12,8 @@ body {
     flex-direction: row;
     gap: 20px;
     padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Estilo global dos links */
@@ -33,24 +35,79 @@ a:active {
     height: auto;
 }
 
-/* Oculta os itens inicialmente */
+/* Estilo dos blocos principais */
+.menu-bloco {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 6px;
+    min-width: 180px;
+    color: #666;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+/* Contêiner dos submenus lado a lado com transição */
+.submenus {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    display: flex;
+    gap: 20px;
+    min-width: 380px;
+
+    opacity: 0;
+    transform: translateY(10px);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Exibe os submenus com efeito ao passar o mouse */
+.menu-bloco.produtos:hover .submenus {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Estilo dos submenus individuais */
 .produtos-itens,
-.suporte,
+.suporte {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 180px;
+}
+
+/* Estilo dos outros submenus */
 .aparelhos-itens,
 .prioridade_energia-itens,
 .usuario_itens {
     display: none;
     flex-direction: column;
     gap: 5px;
-    margin-top: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    min-width: 180px;
+    white-space: nowrap;
 }
 
-/* Exibe os itens ao passar o mouse sobre o bloco inteiro */
-.menu-bloco:hover .produtos-itens,
-.menu-bloco:hover .suporte,
-.menu-bloco:hover .aparelhos-itens,
-.menu-bloco:hover .prioridade_energia-itens,
-.menu-bloco:hover .usuario_itens {
+.menu-bloco.aparelhos:hover .aparelhos-itens,
+.menu-bloco.prioridade_energia:hover .prioridade_energia-itens,
+.menu-bloco.usuario:hover .usuario_itens {
     display: flex;
 }
 
@@ -65,6 +122,7 @@ a:active {
     border-radius: 4px;
     transition: background-color 0.3s;
     color: #666;
+    white-space: nowrap;
 }
 
 .produto_item:hover,
@@ -75,13 +133,10 @@ a:active {
     background-color: #e0e0e0;
 }
 
-/* Estilo dos blocos */
-.menu-bloco {
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 6px;
-    min-width: 180px;
-    color: #666;
-    display: flex;
-    flex-direction: column;
+.produto_item:hover a,
+.suporte_item:hover a,
+.aparelhos_item:hover a,
+.prioridade_energia_item:hover a,
+.usuario_item:hover a {
+    color: red;
 }
