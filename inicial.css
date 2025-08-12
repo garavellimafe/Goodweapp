@@ -1,139 +1,155 @@
-/* Fonte e cor padrão para todo o texto */
-body {
-    font-family: "Nunito", sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #666;
-    display: flex;
-    justify-content: center; /* ✅ Centraliza horizontalmente */
-    align-items: flex-start;
-    min-height: 100vh;
+/* Animação para revelar a imagem */
+@keyframes fadeInBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
+
+/* Fonte e fundo com imagem aparecendo suavemente */
+body {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #1C1C1C;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1)),
+                    url("bannergoodwe1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 
 /* Layout horizontal centralizado */
 .menu-lateral {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    padding: 20px;
-    position: relative;
-    z-index: 1;
-    justify-content: center; /* ✅ Centraliza os blocos */
-    align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 /* Estilo global dos links */
 a {
-    color: #666;
-    text-decoration: none;
-    transition: color 0.3s;
+  color: #1C1C1C;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 a:hover,
 a:active {
-    color: red;
-    text-decoration: none;
+  color: red;
+  text-decoration: none;
 }
 
 /* Logo centralizada */
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo img.logo_goodwe {
-    width: 150px;
-    height: auto;
-    display: block;
+  width: 150px;
+  height: auto;
+  display: block;
 }
 
-/* Estilo dos blocos principais — sem borda */
+/* Estilo dos blocos principais */
 .menu-bloco {
-    padding: 10px;
-    border-radius: 6px;
-    min-width: 180px;
-    color: #666;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: 2;
-    align-items: center; /* ✅ Centraliza conteúdo interno */
+  padding: 10px;
+  border-radius: 6px;
+  min-width: 180px;
+  color: #1C1C1C;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  align-items: center;
 }
 
-/* Submenus lado a lado (Produtos e Suporte) */
+/* Submenus lado a lado */
 .submenus {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 100;
-    background-color: white;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    display: flex;
-    gap: 20px;
-    min-width: 380px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  display: flex;
+  gap: 20px;
+  min-width: 380px;
 
-    opacity: 0;
-    transform: translateY(10px);
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
-/* Exibe os submenus com efeito ao passar o mouse */
 .menu-bloco.produtos:hover .submenus {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-    pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
-/* Estilo dos submenus internos */
+/* Submenus internos */
 .produtos-itens,
 .suporte {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 180px;
 }
 
-/* Submenus individuais com transição suave */
+/* Submenus individuais */
 .aparelhos-itens,
 .prioridade_energia-itens,
 .usuario_itens {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 100;
-    background-color: white;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    min-width: 180px;
-    white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  min-width: 180px;
+  white-space: nowrap;
 
-    opacity: 0;
-    transform: translateY(10px);
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
 }
 
-/* Exibe os submenus com efeito ao passar o mouse */
 .menu-bloco.aparelhos:hover .aparelhos-itens,
 .menu-bloco.prioridade_energia:hover .prioridade_energia-itens,
 .menu-bloco.usuario:hover .usuario_itens {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-    pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* Estilo dos itens */
@@ -142,12 +158,12 @@ a:active {
 .aparelhos_item,
 .prioridade_energia_item,
 .usuario_item {
-    background-color: #f0f0f0;
-    padding: 8px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-    color: #666;
-    white-space: nowrap;
+  background-color: #f0f0f0;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  color: #1C1C1C;
+  white-space: nowrap;
 }
 
 .produto_item:hover,
@@ -155,7 +171,7 @@ a:active {
 .aparelhos_item:hover,
 .prioridade_energia_item:hover,
 .usuario_item:hover {
-    background-color: #e0e0e0;
+  background-color: #e0e0e0;
 }
 
 .produto_item:hover a,
@@ -163,5 +179,5 @@ a:active {
 .aparelhos_item:hover a,
 .prioridade_energia_item:hover a,
 .usuario_item:hover a {
-    color: red;
+  color: red;
 }

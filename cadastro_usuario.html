@@ -1,22 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <title>Cadastro de Usuario</title>
-        <link rel="stylesheet" href="cadastro_usuario.css">
-    </head>
-    <body>
-       <div class="menu-lateral">
-        <!-- Logo -->
-        <div class="logo">
-            <a href="inicial.html"><img src="goodwe.webp" alt="Logo da empresa GOODWE" class="logo_goodwe"></a>
-        </div>
-        <h2>Cadastro de Usuario</h2>
-        <h3>Primeira vez conosco? Cadastre-se para usufruir de beneficios exclusivos</h3>
-        <h4>Nome de usuario</h4>
-        <h4>Email</h4>
-        <h4>Senha</h4>
-        <h4>Confirmação de Senha</h4>
-        <h6>Ja tem cadastro? <a href="usuario_cadastrado.html">Clique aqui</a> para entrar</h6>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Usuário</title>
+  <link rel="stylesheet" href="cadastro_usuario.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="inicial.html">
+        <img src="goodwe.webp" alt="Logo da empresa GOODWE" class="logo_goodwe">
+      </a>
+    </div>
+
+    <!-- Conteúdo de cadastro -->
+    <h2>Cadastro de Usuário</h2>
+    <h3>Primeira vez conosco? Cadastre-se para usufruir de benefícios exclusivos</h3>
+
+    <form>
+      <div class="form-group">
+        <label for="usuario">Nome de usuário</label>
+        <input type="text" id="usuario" name="usuario" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" required>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmacao">Confirmação de Senha</label>
+        <input type="password" id="confirmacao" name="confirmacao" required>
+      </div>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <h6>Já tem cadastro? <a href="usuario_cadastrado.html">Clique aqui</a> para entrar</h6>
+  </div>
+</body>
 </html>
