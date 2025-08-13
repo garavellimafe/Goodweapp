@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="usuario_cadastrado.css">
 </head>
 <body>
-  <div class="container">
+  <div class="geral">
     <!-- Logo -->
     <div class="logo">
       <a href="inicial.html">
@@ -19,20 +19,28 @@
     <h3>Já possui uma conta? Utilize seu email ou nome de usuário e sua senha para acessar</h3>
 
     <form>
-      <div class="form-group">
+      <div class="info">
         <label for="login">Email ou Usuário</label>
         <input type="text" id="login" name="login" required>
       </div>
 
-      <div class="form-group">
+      <div class="info">
         <label for="senha">Senha</label>
         <input type="password" id="senha" name="senha" required>
       </div>
 
-      <button type="submit">Entrar</button>
+      <button type="submit" id="btnEntrar">Entrar</button>
     </form>
 
     <h6>Não tem cadastro? <a href="cadastro_usuario.html">Clique aqui</a> para criar sua conta</h6>
   </div>
+
+  <!-- Script para redirecionar ao clicar no botão -->
+  <script>
+    document.getElementById("btnEntrar").addEventListener("click", function(event) {
+      event.preventDefault(); // Impede o envio do formulário
+      window.location.href = "inicial.html"; // Redireciona para a página inicial
+    });
+  </script>
 </body>
 </html>
